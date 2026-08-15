@@ -16,7 +16,7 @@ create table professores(
     cpf char(11) not null unique,
     email varchar(150) not null unique,
     telefone varchar(20) not null unique,
-    data_nascimento data not null
+    data_nascimento date not null
 );
 
 create table cursos(
@@ -30,10 +30,11 @@ create table disciplinas(
 );
 
 create table cursos_disciplinas(
-    idCurso int not null primary key,
-    idDisciplina int not null primary key,
-    foreign key idCurso references cursos(idCurso),
-    foreign key idDisciplina references disciplinas(idDisciplina)
+    idCurso int not null,
+    idDisciplina int not null,
+    foreign key (idCurso) references cursos(idCurso),
+    foreign key (idDisciplina) references disciplinas(idDisciplina),
+    primary key(idCurso, idDisciplina)
 );
 
 create table turmas(
@@ -71,4 +72,5 @@ create table notas(
     foreign key (idAluno) references alunos(idAluno),
     foreign key (idTurmaDisciplina) references turma_disciplina(idTurmaDisciplina)
 );
+
 
