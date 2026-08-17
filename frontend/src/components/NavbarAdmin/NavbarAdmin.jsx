@@ -19,6 +19,7 @@ function NavbarAdmin() {
                 <a href="">Professores</a>
                 <a href="">Cursos</a>
                 <a href="">Disciplinas</a>
+                <a href="">Cursos e Disciplinas</a>
             </div>
           )}
         </div>

@@ -1,131 +1,169 @@
-*{
+* {
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
-.card-form{
+.card-form {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     width: 40vw;
+    min-width: 500px;
     border-radius: 16px;
-    min-height: 18rem;
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
 }
-
-/* cabeçalho do card */
-.card-header{
+.card-header {
     margin: 1rem;
     display: flex;
 }
-.card-header h4{
+.card-header h4 {
     padding-left: 10px;
     font-size: 18px;
     font-weight: bold;
     border-left: 5px solid blue;
     border-radius: 3px;
 }
-
-/* conteudo do card */
-.card-body{
-    display: flex;
-    justify-content: center;
-    padding: 1rem;
-    background-color: #fff;
-}
-
-/* Form-group full */
-.form-group-full{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+.card-body form {
     width: 100%;
 }
-.form-group-full label{
+.form-group-full {
     display: flex;
-    justify-content: start;
+    flex-direction: column;
+    width: 100%;
+    gap: 5px;
+}
+.form-group-full label {
     font-size: 14px;
 }
-
-/* Form-group grid */
-
-.form-group-grid{
+.form-group-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px 14px;
 }
-.form-group-grid .form-group{
+.form-group-grid .form-group {
     display: flex;
     flex-direction: column;
     gap: 5px;
     margin: 10px;
 }
-.form-group-grid .form-group label{
-    display: flex;
-    justify-content: start;
-}
-.form-group-grid label{
-    display: flex;
-    justify-content: start;
+.form-group-grid label {
     font-size: 14px;
 }
-
-/* input do form-group */
-.form-group input{
-    height: 18px;
+.form-group input,
+.form-group-full input {
+    width: 100%;
+    height: 38px;
     padding: 8px;
     border: 1px solid gray;
     border-radius: 8px;
     transition: all 0.4s ease-in-out;
     outline: none;
-    background-color: #F1F4F8;
+    background-color: #f1f4f8;
 }
-
-/* Botões */
-.buttons{
+.form-group input:focus,
+.form-group-full input:focus {
+    border-color: #3a49d6;
+    box-shadow: 0 0 0 2px rgba(58, 73, 214, 0.15);
+}
+.buttons {
     display: flex;
     gap: 1rem;
+    margin-top: 10px;
 }
-.btn-register button{
+.btn-register,
+.btn-clean {
+    flex: 1;
+}
+.btn-register button,
+.btn-clean button {
     width: 100%;
-    height: 30px;
+    height: 38px;
     padding: 7px;
     border: none;
     border-radius: 10px;
-    background-color: #3a49d6;
     font-weight: bold;
-    color: lightgray;
+    cursor: pointer;
     transition: all 0.4s ease;
 }
-.btn-register button:hover{
-    transform: scale(1.1);
+.btn-register button {
+    background-color: #3a49d6;
+    color: lightgray;
+}
+.btn-register button:hover {
+    transform: scale(1.03);
     box-shadow: 0 2px 3px black;
     color: #3a49d6;
     background: lightgray;
 }
-.btn-register button:active{
+.btn-register button:active {
     color: lightgray;
     background: #3a49d6;
-    transform: scale(0.9);
+    transform: scale(0.97);
 }
-
-.btn-clean button{
-    width: 100%;
-    height: 30px;
-    padding: 7px;
-    border: none;
-    border-radius: 10px;
+.btn-clean button {
     background-color: #a4a4a5;
-    font-weight: bold;
     color: white;
-    transition: all 0.4s ease;
 }
-.btn-clean button:hover{
-    transform: scale(1.1);
+.btn-clean button:hover {
+    transform: scale(1.03);
     box-shadow: 0 2px 3px black;
     color: #a4a4a5;
     background: whitesmoke;
 }
-.btn-clean button:active{
+.btn-clean button:active {
     color: whitesmoke;
     background: #a4a4a5;
-    transform: scale(0.9);
+    transform: scale(0.97);
+}
+
+@media (max-width: 900px) {
+    .card-form {
+        width: 70vw;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 600px) {
+    .card-form {
+        width: 100%;
+        min-width: 0;
+    }
+    .card-header {
+        margin: 1rem 0.5rem;
+    }
+    .card-header h4 {
+        font-size: 16px;
+    }
+    .card-body {
+        padding: 1rem 0.7rem;
+    }
+    .form-group-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+    .form-group-grid .form-group {
+        margin: 8px 0;
+    }
+    .buttons {
+        gap: 10px;
+    }
+}
+
+@media (max-width: 400px) {
+    .card-header h4 {
+        font-size: 15px;
+    }
+    .card-body {
+        padding: 0.8rem 0.5rem;
+    }
+    .buttons {
+        flex-direction: column;
+    }
+    .btn-register button,
+    .btn-clean button {
+        height: 40px;
+    }
 }

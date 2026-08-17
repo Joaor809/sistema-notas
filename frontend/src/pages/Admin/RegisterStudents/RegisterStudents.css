@@ -1,0 +1,22 @@
+.RegisterStudents{
+    display: flex;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+}
+
+.RegisterStudents-form{
+    display: flex;
+    flex: 1;
+    align-items: flex-start;
+    justify-content: center;
+    padding: 2rem;
+}
+@media (max-width: 768px) {
+    .RegisterTeachers {
+        flex-direction: column;
+    }
+
+    .RegisterTeachers-form {
+        width: 100%;
+    }
+}
