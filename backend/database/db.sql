@@ -76,6 +76,10 @@ create table notas(
 
 create table usuarios(
     id int auto_increment primary key,
+    idProfessor int not null unique,
     cpf char(11) not null,
-    senha varchar(50) not null
+    senha varchar(50) not null,
+    foreign key (idProfessor) references professores(id);
 );
+
+drop database sistema_notas;

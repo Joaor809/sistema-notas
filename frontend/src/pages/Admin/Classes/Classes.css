@@ -1,0 +1,17 @@
+.Classes{
+    display: flex;
+}
+.card-form{
+    display: flex;
+    justify-content: center;
+}
+
+@media(max-width: 768px){
+    .Classes{
+        display: flex;
+        flex-direction: column;
+    }
+    .card-form{
+        width: 100vw;
+    }
+}
